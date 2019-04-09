@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="main.xhtml"
+>
+
+    <ui:define name="general_content">
+
+        <p:panel header="Chart Type">
+            <p:panelGrid columns="2" id="charttypePanel">
+
+                <h:outputLabel value="ID" />
+                <p:outputLabel value="#{chartTypeController.selectedObject.id}"/>
+
+                <h:outputLabel value="Name" />
+                <p:inputText  value="#{chartTypeController.selectedObject.name}"/>
+
+                <h:outputLabel value="Notes" />
+                <p:inputTextarea  value="#{chartTypeController.selectedObject.notes}"
+                                  cols="100" rows="15"/>
+
+                <h:outputLabel value="Created date" />
+                <p:outputLabel  value="#{chartTypeController.selectedObject.createdDate}"/>
+
+                <h:outputLabel value="Valid to date" />
+                <p:inputText value="#{chartTypeController.selectedObject.endDate}" />
+
+            </p:panelGrid>
+            <p:commandButton value="Cancel"
+                             action="#{chartTypeController.cancel}"
+                             process="@all"
+                             update="@all"
+                             icon="ui-icon-disk" />
+            <p:commandButton value="#{chartTypeController.editButtonCaption}"
+                             action="#{chartTypeController.save}"
+                             process="@all"
+                             update="@all"
+                             icon="ui-icon-disk" />
+        </p:panel>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,83 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="main.xhtml"
+>
+
+    <ui:define name="general_content">
+
+        <p:panel header="Chart type list">
+
+            <p:dataTable id="chartTypeTable"
+                         binding="#{table}"
+                         value="#{chartTypeController.list}"
+                         var="chartType"
+                         class="table table-striped table-hover table-bordered tableUpdated"
+                         rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
+                         rowsPerPageTemplate="5,10,25,50"
+                         sortMode="multiple"
+                         emptyMessage="No chart type found">
+
+                <f:facet name="{Exporters}">
+                    <h:commandLink>
+                        <h:graphicImage value="/images/icon/excel-icon.png" width="24"/>
+                        <p:dataExporter type="xls" target="chartTypeTable" fileName="chartType" />
+                    </h:commandLink>
+
+                    <h:commandLink>
+                        <h:graphicImage value="/images/icon/csv-icon.png" width="24"/>
+                        <p:dataExporter type="csv" target="chartTypeTable" fileName="chartType" />
+                    </h:commandLink>
+
+                    <h:commandLink>
+                        <h:graphicImage value="/images/icon/xml-icon.png" width="24"/>
+                        <p:dataExporter type="xml" target="chartTypeTable" fileName="chartType" />
+                    </h:commandLink>
+                </f:facet>
+
+                <p:column>
+                    <f:facet name="header">Id</f:facet>
+                    <h:outputText value="#{table.rowIndex + 1}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Name</f:facet>
+                    <h:outputText value="#{chartType.name}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Notes</f:facet>
+                    <h:outputText value="#{chartType.notes}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Created date</f:facet>
+                    <h:outputText value="#{chartType.createdDate}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Valid to date</f:facet>
+                    <h:outputText value="#{chartType.endDate}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Update</f:facet>
+                    <h:commandButton action="#{chartTypeController.edit(chartType)}"
+                                     value="Edit"
+                                     class="btn btn-primary" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton action="#{chartTypeController.remove(chartType)}"
+                                     value="Delete"
+                                     class="btn btn-danger" />
+                </p:column>
+            </p:dataTable>
+
+            <p:commandButton action="charttypeView"
+                             value="Create Chart Type"
+                             class="btn btn-success btnSpace" />
+
+        </p:panel>
+
+    </ui:define>
+</ui:composition>

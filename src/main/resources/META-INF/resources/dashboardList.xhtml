@@ -1,0 +1,118 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="main.xhtml"
+>
+
+    <ui:define name="general_content">
+
+        <p:panel header="Dashboard list">
+
+            <h:dataTable id="dashboardTable"
+                         binding="#{table}"
+                         value="#{dashboardController.list}"
+                         var="dashboard"
+                         class="table table-striped table-hover table-bordered tableUpdated"
+                         rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
+                         rowsPerPageTemplate="5,10,25,50"
+                         sortMode="multiple"
+                         emptyMessage="No dashboard found">
+
+                <f:facet name="{Exporters}">
+                    <h:commandLink>
+                        <h:graphicImage value="/images/icon/excel-icon.png" width="24"/>
+                        <p:dataExporter type="xls" target="dashboardTable" fileName="dashboard" />
+                    </h:commandLink>
+
+                    <h:commandLink>
+                        <h:graphicImage value="/images/icon/csv-icon.png" width="24"/>
+                        <p:dataExporter type="csv" target="dashboardTable" fileName="dashboard" />
+                    </h:commandLink>
+
+                    <h:commandLink>
+                        <h:graphicImage value="/images/icon/xml-icon.png" width="24"/>
+                        <p:dataExporter type="xml" target="dashboardTable" fileName="dashboard" />
+                    </h:commandLink>
+                </f:facet>
+                
+                <p:column>
+                    <f:facet name="header">Id</f:facet>
+                    <h:outputText value="#{table.rowIndex + 1}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Show</f:facet>
+                    <h:outputText value="#{dashboard.show.name}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Animate</f:facet>
+                    <h:outputText value="#{dashboard.animate.name}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Name</f:facet>
+                    <h:outputText value="#{dashboard.name}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Type</f:facet>
+                    <h:outputText value="#{dashboard.chartType.name}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Query</f:facet>
+                    <h:outputText value="#{dashboard.query}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Columns</f:facet>
+                    <h:outputText value="#{dashboard.seriesTags}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Show column indexes</f:facet>
+                    <h:outputText value="#{dashboard.showColumn}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Legen position</f:facet>
+                    <h:outputText value="#{dashboard.legendPosition}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Y min</f:facet>
+                    <h:outputText value="#{dashboard.ymin}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Y max</f:facet>
+                    <h:outputText value="#{dashboard.ymax}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Notes</f:facet>
+                    <h:outputText value="#{dashboard.notes}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Created date</f:facet>
+                    <h:outputText value="#{dashboard.createdDate}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Valid to date</f:facet>
+                    <h:outputText value="#{dashboard.endDate}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Update</f:facet>
+                    <h:commandButton action="#{dashboardController.edit(dashboard)}"
+                                     value="Edit"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton action="#{dashboardController.remove(dashboard)}"
+                                     value="Delete"
+                                     class="btn btn-danger"/>
+                </p:column>
+            </h:dataTable>
+
+            <h:commandButton action="dashboardView"
+                             value="Create New Dashboard"
+                             class="btn btn-success btnSpace" />
+
+        </p:panel>
+
+    </ui:define>
+</ui:composition>

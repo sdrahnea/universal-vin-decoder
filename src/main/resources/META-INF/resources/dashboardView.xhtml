@@ -1,0 +1,99 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="main.xhtml"
+>
+
+    <ui:define name="general_content">
+
+        <p:panel header="Dashboard">
+            <p:panelGrid columns="2" id="dashboardPanel">
+
+                <h:outputLabel value="ID" />
+                <p:outputLabel value="#{dashboardController.selectedObject.id}"/>
+
+                <h:outputLabel value="Show" />
+                <p:selectOneMenu value="#{dashboardController.selectedObject.show}"
+                                 converter="constantConverter"
+                                 effect="fold"
+                                 editable="true">
+                    <f:selectItem itemLabel="Select One" itemValue="" />
+                    <f:selectItems value="#{constantController.list}"
+                                   var="constant"
+                                   itemLabel="#{constant.name}"
+                                   itemValue="#{constant}"/>
+                </p:selectOneMenu>
+
+                <h:outputLabel value="Animate" />
+                <p:selectOneMenu value="#{dashboardController.selectedObject.animate}"
+                                 converter="constantConverter"
+                                 effect="fold"
+                                 editable="true">
+                    <f:selectItem itemLabel="Select One" itemValue="" />
+                    <f:selectItems value="#{constantController.list}"
+                                   var="constant"
+                                   itemLabel="#{constant.name}"
+                                   itemValue="#{constant}"/>
+                </p:selectOneMenu>
+
+                <h:outputLabel value="Name" />
+                <p:inputTextarea  value="#{dashboardController.selectedObject.name}"
+                                  cols="100" rows="3"/>
+
+                <h:outputLabel value="Type" />
+                <p:selectOneMenu value="#{dashboardController.selectedObject.chartType}"
+                                 converter="chartTypeConverter"
+                                 effect="fold"
+                                 editable="true">
+                    <f:selectItem itemLabel="Select One" itemValue="" />
+                    <f:selectItems value="#{chartTypeController.list}"
+                                   var="chartType"
+                                   itemLabel="#{chartType.name}"
+                                   itemValue="#{chartType}"/>
+                </p:selectOneMenu>
+
+                <h:outputLabel value="Query" />
+                <p:inputTextarea  value="#{dashboardController.selectedObject.query}"
+                                    cols="100" rows="15"/>
+
+                <h:outputLabel value="Show column indexes (to be separate by , char)" />
+                <p:inputText  value="#{dashboardController.selectedObject.showColumn}"/>
+
+                <h:outputLabel value="Columns (to be separate by , char)" />
+                <p:inputText  value="#{dashboardController.selectedObject.seriesTags}"/>
+
+                <h:outputLabel value="Legen position" />
+                <p:inputText  value="#{dashboardController.selectedObject.legendPosition}"/>
+
+                <h:outputLabel value="Y min" />
+                <p:inputText  value="#{dashboardController.selectedObject.ymin}"/>
+
+                <h:outputLabel value="Y max" />
+                <p:inputText  value="#{dashboardController.selectedObject.ymax}"/>
+
+                <h:outputLabel value="Notes" />
+                <p:inputTextarea  value="#{dashboardController.selectedObject.notes}"
+                                  cols="100" rows="15"/>
+
+                <h:outputLabel value="Created date" />
+                <p:outputLabel  value="#{dashboardController.selectedObject.createdDate}"/>
+
+                <h:outputLabel value="Valid to date" />
+                <p:inputText value="#{dashboardController.selectedObject.endDate}" />
+
+            </p:panelGrid>
+            <p:commandButton value="Cancel"
+                             action="#{dashboardController.cancel}"
+                             process="@all"
+                             update="@all"
+                             icon="ui-icon-disk" />
+            <p:commandButton value="#{dashboardController.editButtonCaption}"
+                             action="#{dashboardController.save}"
+                             process="@all"
+                             update="@all"
+                             icon="ui-icon-disk" />
+        </p:panel>
+    </ui:define>
+</ui:composition>
