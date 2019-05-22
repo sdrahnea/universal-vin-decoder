@@ -1,29 +1,23 @@
-package com.uvd.service.hyundai;
+package com.uvd.service.hyundai.engine.model;
 
 import java.util.HashMap;
 
 
 /***
- * Hyundai World Manufacture Identifier Map
+ * Class A (Atos / Santo / Visto / i10)
  */
-public class HyundaiBodyTypeMap extends HashMap<String, String> {
+public class ClassAMap extends HashMap<String, String> {
 
-  public static HyundaiBodyTypeMap getDefault() {
-    HyundaiBodyTypeMap defaultMap = new HyundaiBodyTypeMap();
+  public static ClassAMap getDefault() {
+    ClassAMap defaultMap = new ClassAMap();
 
-    defaultMap.put("A", "hatchback, 5 doors");
-    defaultMap.put("B", "pickup 2 doors");
-    defaultMap.put("C", "convertible");
-    defaultMap.put("D", "hatchback 3 doors");
-    defaultMap.put("E", "compartment 2 doors");
-    defaultMap.put("F", "sedan 4D");
-    defaultMap.put("G", "compartment 2 doors");
-    defaultMap.put("N", "Combi 3 door");
-    defaultMap.put("P", "combi, doors 5");
-    defaultMap.put("S", "wagon, 5 doors");
-    defaultMap.put("T", "wagon door 5");
-    defaultMap.put("V", "minivan");
-    defaultMap.put("W", "wagon, 5 doors");
+    defaultMap.put("B", "1.1 l (gasoline, SOHC (3 valve per cylinder))");
+    defaultMap.put("C", "1.2 (1.3) l (gasoline, DOHC)");
+    defaultMap.put("F", "0.8 liters (gasoline, SOHC)");
+    defaultMap.put("G", "1.0 l (gasoline, SOHC)");
+    defaultMap.put("H", "1.1 liters (gasoline, SOHC)");
+    defaultMap.put("J", "0.8 l (gasoline)");
+    defaultMap.put("R", "0.8 l");
 
     return defaultMap;
   }

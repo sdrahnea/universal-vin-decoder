@@ -4,14 +4,18 @@ import java.util.HashMap;
 
 
 /***
- * Model year map (1971 -> 2030)
+ * Hyundai Assembly Plant map
  */
-public class HyundaiModelYearMap extends HashMap<String, String> {
+public class HyundaiAssemblyPlantMap extends HashMap<String, String> {
 
-  public static HyundaiModelYearMap getDefault() {
-    HyundaiModelYearMap defaultMap = new HyundaiModelYearMap();
+  public static HyundaiAssemblyPlantMap getDefault() {
+    HyundaiAssemblyPlantMap defaultMap = new HyundaiAssemblyPlantMap();
 
-    defaultMap.put("", "");
+    defaultMap.put("A", "A-San (Korea)");
+    defaultMap.put("C", "Cheon-Ju (Korea)");
+    defaultMap.put("M", "Chennnai (Madras) (India), TagAz (Russia)");
+    defaultMap.put("U", "Ul-San (Korea)");
+    defaultMap.put("Z", "Izmit (Turkey)");
 
     return defaultMap;
   }

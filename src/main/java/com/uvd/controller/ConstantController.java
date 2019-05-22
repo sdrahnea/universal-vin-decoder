@@ -9,5 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/constant")
+
+
+@Ser
 public class ConstantController extends AbstractController<Constant> {
 }

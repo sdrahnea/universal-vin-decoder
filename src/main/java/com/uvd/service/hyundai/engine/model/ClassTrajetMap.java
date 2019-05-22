@@ -4,20 +4,17 @@ import java.util.HashMap;
 
 
 /***
- * Class C (Accent / Verna / Matrix / Lavita)
+ * Trajet
  */
-public class ClassCMap extends HashMap<String, String> {
+public class ClassTrajetMap extends HashMap<String, String> {
 
-  public static ClassCMap getDefault() {
-    ClassCMap defaultMap = new ClassCMap();
+  public static ClassTrajetMap getDefault() {
+    ClassTrajetMap defaultMap = new ClassTrajetMap();
 
-    defaultMap.put("B", "1.5 l (gasoline, DOHC)");
-    defaultMap.put("C", "1.6 liter (gasoline, DOHC)");
-    defaultMap.put("D", "1.8 l (gasoline, DOHC)");
-    defaultMap.put("F", "1.0 / 1.3 liters (gasoline, SOHC)");
-    defaultMap.put("G", "1.5 l (gasoline, SOHC)");
-    defaultMap.put("V", "1.5 l (diesel, TCI)");
-    defaultMap.put("W", "2.0 l (diesel, TCI)");
+    defaultMap.put("A", "2.0 l (gasoline, DOHC)");
+    defaultMap.put("C", "2.7 liter (gasoline, DOHC)");
+    defaultMap.put("N", "2.7 l (DOHC)");
+    defaultMap.put("V", "v");
 
     return defaultMap;
   }

@@ -3,24 +3,19 @@ package com.uvd.service.hyundai.engine.model;
 import java.util.HashMap;
 
 /***
- * Class C + (Elantra / Lantra / i30 / Avante)
+ * Class D (Sonata for the North American market)
  */
-public class ClassDEuropaMap extends HashMap<String, String> {
+public class ClassDAmericaMap extends HashMap<String, String> {
 
-  public static ClassDEuropaMap getDefault() {
-    ClassDEuropaMap defaultMap = new ClassDEuropaMap();
-    
-    defaultMap.put("A", "1.5 l (gasoline, DOHC)");
-    defaultMap.put("B", "1.6 l (gasoline, DOHC)");
-    defaultMap.put("C", "1.4 liter (gasoline, DOHC) [i30]");
-    defaultMap.put("D", "1.8 liter (gasoline, DOHC )");
-    defaultMap.put("J", "2.0 l (gasoline, DOHC)");
-    defaultMap.put("L", "1.5 l (gasoline)");
-    defaultMap.put("M", "1.5 l (gasoline)");
-    defaultMap.put("R", "1.8 l (gasoline)");
-    defaultMap.put("T", "1.6 l (diesel, CRDI) [i30]");
-    defaultMap.put("U", "2.0 l (diesel, CRDI) [i30]");
-    defaultMap.put("V", "2.0 l (diesel, TCI)");
+  public static ClassDAmericaMap getDefault() {
+    ClassDAmericaMap defaultMap = new ClassDAmericaMap();
+
+    defaultMap.put("E", "3.3 l (gasoline)");
+    defaultMap.put("F", "2.0 liters (petrol)");
+    defaultMap.put("H", "2.7 liters (petrol)");
+    defaultMap.put("N", "1.9 l (gasoline)");
+    defaultMap.put("S", "2.4 l (gasoline)");
+    defaultMap.put("V", "2.5 l (gasoline)");
 
     return defaultMap;
   }

@@ -2,10 +2,14 @@ package com.uvd.service.hyundai;
 
 import java.util.HashMap;
 
-public class WorldMakeIdentifierMap extends HashMap<String, String> {
 
-  public static WorldMakeIdentifierMap getDefault() {
-    WorldMakeIdentifierMap defaultMap = new WorldMakeIdentifierMap();
+/***
+ * Hyundai World Manufacture Identifier Map
+ */
+public class HyundaiWMIMap extends HashMap<String, String> {
+
+  public static HyundaiWMIMap getDefault() {
+    HyundaiWMIMap defaultMap = new HyundaiWMIMap();
 
     defaultMap.put("2HM", "Bromont Assy Plant (CAN)");
     defaultMap.put("3H3", "HYUNDAI (USA)");

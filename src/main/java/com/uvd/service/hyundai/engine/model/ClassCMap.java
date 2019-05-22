@@ -4,22 +4,20 @@ import java.util.HashMap;
 
 
 /***
- * Class B (Getz / Click):
+ * Class C (Accent / Verna / Matrix / Lavita)
  */
-public class ClassBMap extends HashMap<String, String> {
+public class ClassCMap extends HashMap<String, String> {
 
-  public static ClassBMap getDefault() {
-    ClassBMap defaultMap = new ClassBMap();
+  public static ClassCMap getDefault() {
+    ClassCMap defaultMap = new ClassCMap();
 
-    defaultMap.put("A", "1.5 l (gasoline, DOHC)");
-    defaultMap.put("B", "1.6 l (gasoline, DOHC)");
-    defaultMap.put("C", "1.8 liter (gasoline, DOHC)");
-    defaultMap.put("F", "1.0 liters (gasoline, SOHC)");
-    defaultMap.put("G", "1.1 l (gasoline, SOHC)");
-    defaultMap.put("H", "1.3 liters (gasoline, SOHC)");
-    defaultMap.put("J", "1.5 l (gasoline, SOHC)");
-    defaultMap.put("V", "1.1 l (diesel, TCI)");
-    defaultMap.put("W", "1.5 l (diesel, TCI)");
+    defaultMap.put("B", "1.5 l (gasoline, DOHC)");
+    defaultMap.put("C", "1.6 liter (gasoline, DOHC)");
+    defaultMap.put("D", "1.8 l (gasoline, DOHC)");
+    defaultMap.put("F", "1.0 / 1.3 liters (gasoline, SOHC)");
+    defaultMap.put("G", "1.5 l (gasoline, SOHC)");
+    defaultMap.put("V", "1.5 l (diesel, TCI)");
+    defaultMap.put("W", "2.0 l (diesel, TCI)");
 
     return defaultMap;
   }

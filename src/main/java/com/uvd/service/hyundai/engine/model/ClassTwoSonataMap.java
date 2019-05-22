@@ -4,20 +4,19 @@ import java.util.HashMap;
 
 
 /***
- * Class C (Accent / Verna / Matrix / Lavita)
+ * II Sonata
  */
-public class ClassCMap extends HashMap<String, String> {
+public class ClassTwoSonataMap extends HashMap<String, String> {
 
-  public static ClassCMap getDefault() {
-    ClassCMap defaultMap = new ClassCMap();
+  public static ClassTwoSonataMap getDefault() {
+    ClassTwoSonataMap defaultMap = new ClassTwoSonataMap();
 
-    defaultMap.put("B", "1.5 l (gasoline, DOHC)");
-    defaultMap.put("C", "1.6 liter (gasoline, DOHC)");
-    defaultMap.put("D", "1.8 l (gasoline, DOHC)");
-    defaultMap.put("F", "1.0 / 1.3 liters (gasoline, SOHC)");
-    defaultMap.put("G", "1.5 l (gasoline, SOHC)");
-    defaultMap.put("V", "1.5 l (diesel, TCI)");
-    defaultMap.put("W", "2.0 l (diesel, TCI)");
+    defaultMap.put("D", "1.8 l (gasoline)");
+    defaultMap.put("F", "2.0 liters (petrol)");
+    defaultMap.put("L", "L of 2.0");
+    defaultMap.put("M", "1.8 l");
+    defaultMap.put("N", "1.8 l");
+    defaultMap.put("T", "3.0 l");
 
     return defaultMap;
   }

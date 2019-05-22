@@ -1,4 +1,9 @@
 package com.uvd.model;
 
-public class Decoder {
+import java.util.Map;
+
+public interface Decoder {
+
+  Map<String, String> decode(final String value);
+
 }
