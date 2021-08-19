@@ -2,15 +2,15 @@
 
 Universal VIN Decoder is a tool to decode car's vin (vehicle identification number)
 
-## Getting Started
+## 1. Getting Started
 
 Clone or download a copy of this project.
 
-### Prerequisites
+### 1.1 Prerequisites
 
 This project requires Java 1.8, MySQL and Maven.
 
-### Installing
+### 1.2 Installing
 
 After MySQL instalation, it is required to create a dabase:
 
@@ -85,11 +85,11 @@ SDR:universal-vin-decoder sdrahnea$ mvn clean compile package
 SDR:universal-vin-decoder sdrahnea$ 
 ```
 
-## Running the tests
+## 2. Running the tests
 
 This project does not have any kind of tests :).
 
-## Deployment
+## 3. Deployment
 
 Once the build (the jar file) is ready the application can be run. Please, use the following command to run the application:
 ```
@@ -98,7 +98,7 @@ SDR:universal-vin-decoder sdrahnea$ java -jar target/universal-vin-decoder-0.0.1
 If was used default configuration then the application should be available at this url: http://localhost:8081/oms/login.xhtml 
 Use the following credentials: username: admin, password: 123.
 
-## Built With
+## 4. Built With
 
 * [Java](https://www.java.com/en/download/) - Java technology allows you to work and play in a secure computing environment. Java allows you to play online games, chat with people around the world, calculate your mortgage interest, and view images in 3D, just to name a few.
 * [PrimeFaces](https://www.primefaces.org/) - PrimeFaces is a popular open source framework for JavaServer Faces featuring over 100 components, touch optimized mobilekit, client side validation, theme engine and more.
@@ -109,22 +109,22 @@ Use the following credentials: username: admin, password: 123.
 * [MySQL](https://www.mysql.com/) - MySQL is the world's most popular open source database. Whether you are a fast growing web property, technology ISV or large enterprise, MySQL can cost-effectively help you deliver high performance, scalable database applications.
 * [Maven](https://maven.apache.org/) - Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information. 
 
-## Contributing
+## 5. Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
+## 6. Versioning
 
 We use [SemVer](http://semver.org/) for versioning.
 
-## Authors
+## 7. Authors
 
 * **Sergiu Drahnea** - *Initial work* - [LinkedIn](https://www.linkedin.com/in/sergiu-drahnea-563745123)
 
-## License
+## 8. License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Donation
+## 9. Donation
 * [PayPal](https://www.paypal.me/sdrahnea) - any donation is welcomed in case that you was pleased with this work :p
 
